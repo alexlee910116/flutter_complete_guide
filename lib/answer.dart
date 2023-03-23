@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_color_plugin/flutter_color_plugin.dart';
 
 
 class Answer extends StatelessWidget {
@@ -13,7 +14,7 @@ class Answer extends StatelessWidget {
       width: double.infinity,
       child: TextButton(
         style: TextButton.styleFrom(
-          backgroundColor: Colors.blue,
+          backgroundColor: ColorUtil.color('#a1FF5733'),
           foregroundColor: Colors.white,
         ),
         child: Text(anserText),
