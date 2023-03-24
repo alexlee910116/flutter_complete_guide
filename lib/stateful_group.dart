@@ -19,7 +19,12 @@ class _StatefullGroup extends State<StatefullGroup> {
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
-        appBar: AppBar(title: Text('StatefullWidget')),
+        appBar: AppBar(
+          leading: GestureDetector(onTap:(){
+            Navigator.pop(context);
+          },
+          child: Icon(Icons.arrow_back), ),
+          title: Text('StatefullWidget')),
         bottomNavigationBar: BottomNavigationBar(
             currentIndex: _currentIndex,
             onTap: (index) {

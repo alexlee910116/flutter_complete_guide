@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
-class StalessGroup extends StatelessWidget {
+class StatelessGroup extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -13,7 +13,12 @@ class StalessGroup extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
-        appBar: AppBar(title: Text('StatelessWidget')),
+        appBar: AppBar(
+          leading: GestureDetector(onTap:(){
+            Navigator.pop(context);
+          },
+          child: Icon(Icons.arrow_back), ),
+          title: Text('StatelessWidget')),
         body: Container(
           decoration: BoxDecoration(color: Colors.white),
           alignment: Alignment.center,
