@@ -79,6 +79,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_complete_guide/gesture.dart';
+import 'package:flutter_complete_guide/res_page.dart';
 import 'package:flutter_complete_guide/stateful_group.dart';
 import 'package:flutter_complete_guide/stateless_group.dart';
 
@@ -105,6 +106,7 @@ class MyApp extends StatelessWidget {
         'full': (BuildContext context) => StatefullGroup(),
         'layout': (BuildContext context) => FlutterLayout(),
         'guesture': (BuildContext context) => GesturePage(),
+        'respage': (BuildContext context) => Respage(),
 
       },
     );
@@ -134,6 +136,7 @@ class _RouteNavigatorState extends State<RouteNavigator> {
         _item('StatefullWidget', StatefullGroup(), 'full'),
         _item('FlutterLayout', FlutterLayout(), 'layout'),
         _item('Gesture', GesturePage(), 'gesture'),
+        _item('ResPage', Respage(), 'respage'), 
 
       ]),
     );
