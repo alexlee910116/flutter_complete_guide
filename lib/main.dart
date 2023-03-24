@@ -1,89 +1,10 @@
-// import 'package:flutter/material.dart';
-// import 'package:flutter_complete_guide/stateful_group.dart';
-// import 'package:flutter_complete_guide/stateless_group.dart';
-// import './question.dart';
-// import './answer.dart';
-// import 'package:flutter_complete_guide/flutter_layout.dart';
-
-// void main() {
-//   runApp(FlutterLayout());
-// }
-
-// class MyApp extends StatefulWidget {
-//   @override
-//   State<StatefulWidget> createState() {
-//     return _MyAppState();
-//   }
-// }
-// class _MyAppState extends State<MyApp> {
-//   var _questionIndex = 0;
-
-//   void _answerQuestion() {
-//     setState(() {
-//       _questionIndex = _questionIndex + 1;
-//     });
-//     print(_questionIndex);
-//   }
-
-//   @override
-//   Widget build(BuildContext context) {
-//     // var questions = [
-//     //   {'questionText':'What\'s your favorite color?',
-//     //   'answer': ['Black', 'Red', 'Green', 'White'],
-//     //   },
-//     //   {'questionText': 'What\'s your favorite animal?',
-//     //   'answer': ['Rabbit', 'Snake', 'Elephant', 'Lion'],
-//     //   },
-//     //   {'questionText': 'Who\'s your favorite instructor?',
-//     //   'answer': ['Alex', 'Bob', 'Cindy', 'David'],
-//     //   }
-//     // ];
-//     return MaterialApp(
-//       title: 'how to layout',
-//       theme: ThemeData(
-//         primarySwatch: Colors.blue,
-//       ),
-//       home: Scaffold(
-//         appBar: AppBar(
-//           title: const Text('How to layout'),
-//         ),
-//         bottomNavigationBar: BottomNavigationBar(
-//           currentIndex: _currentIndex,
-//           onTap: (index) {
-//             setState(() {
-//               _currentIndex = index;
-//             });
-//           },
-//           items: [
-//             BottomNavigationBarItem(
-//               icon: Icon(
-//                 Icons.home,
-//               color:Colors.grey))
-//           ],
-//         ),
-//         // body: Column(
-//         //   children: [
-//             // Question(
-//             //   // questions.elementAt(0),
-//             //   questions[_questionIndex]['questionText'] as String,
-//             //   ),
-//             //   ...(questions[_questionIndex]['answer'] as List<String>).map((answer) {
-//             //     return Answer(_answerQuestion, answer);
-//             //   }).toList()
-//           // ],
-//         ),
-//       ),
-//     );
-//   }
-// }
-
 import 'package:flutter/material.dart';
-import 'package:flutter_complete_guide/gesture.dart';
-import 'package:flutter_complete_guide/launch_page.dart';
-import 'package:flutter_complete_guide/res_page.dart';
-import 'package:flutter_complete_guide/stateful_group.dart';
-import 'package:flutter_complete_guide/stateless_group.dart';
-
+import 'package:url_launcher/url_launcher.dart';
+import 'gesture.dart';
+import 'launch_page.dart';
+import 'res_page.dart';
+import 'stateful_group.dart';
+import 'stateless_group.dart';
 import 'flutter_layout.dart';
 
 void main() => runApp(MyApp());

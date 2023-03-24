@@ -32,7 +32,11 @@ class _LaunchPageState extends State<LaunchPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(onPressed: (_launchUrl),
-            child: Text('open the browser'),)
+            child: Text('open the browser'),
+            ),
+            ElevatedButton(onPressed:()=> _openMap(),
+            child: Text('open the map'),
+            )
           ],
             ),
          ),    
@@ -45,3 +49,16 @@ class _LaunchPageState extends State<LaunchPage> {
     throw Exception('Could not launch $url');
   }
 }
+
+_openMap() async {
+  const _url = 'geo:52.32,4.917';
+  if (await launch(_url)) {
+    await launch(_url);
+  } else {
+    const _url = 'http://maps.apple.com/?ll=52.32,4.917';
+    if (await canLaunchUrl(url)) {
+    await launch(_url);
+  } else {
+    throw Exception('Could not launch $url');
+  }
+} }
