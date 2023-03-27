@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:go_router/go_router.dart';
+
 final Uri url = Uri.parse('https://www.google.com');
 
 class LaunchPage extends StatefulWidget {
@@ -11,6 +13,9 @@ class LaunchPage extends StatefulWidget {
 }
 
 class _LaunchPageState extends State<LaunchPage> {
+  back(BuildContext context) {
+      context.pop('/');
+    }
   String printString = '';
   double movex = 0, movey = 0;
   @override
@@ -22,7 +27,7 @@ class _LaunchPageState extends State<LaunchPage> {
           title: Text('How to launch other app'),
           leading: GestureDetector(
             onTap: () {
-              Navigator.pop(context);
+              back(context);
             },
             child: Icon(Icons.arrow_back),
           ),

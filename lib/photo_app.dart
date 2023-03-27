@@ -3,13 +3,13 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:go_router/go_router.dart';
 
-class Respage extends StatefulWidget {
-
+class PhotoApp extends StatefulWidget {
+  
   @override
-  _RespageState createState() => _RespageState();
+  _PhotoAppState createState() => _PhotoAppState();
 }
 
-class _RespageState extends State<Respage> {
+class _PhotoAppState extends State<PhotoApp> {
   back(BuildContext context) {
       context.pop('/');
     }
@@ -21,10 +21,10 @@ class _RespageState extends State<Respage> {
       theme: ThemeData(primarySwatch: Colors.blue),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('How to resource'),
+          title: Text('How to make a photoapp'),
           leading: GestureDetector(
             onTap: () {
-              Navigator.pop(context);
+              back(context);
             },
             child: Icon(Icons.arrow_back),
           ),

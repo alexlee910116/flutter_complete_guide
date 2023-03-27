@@ -3,8 +3,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:go_router/go_router.dart';
 
 class StatelessGroup extends StatelessWidget {
+  back(BuildContext context) {
+      context.pop('/');
+    }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,7 +19,7 @@ class StatelessGroup extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           leading: GestureDetector(onTap:(){
-            Navigator.pop(context);
+            back(context);
           },
           child: Icon(Icons.arrow_back), ),
           title: Text('StatelessWidget')),

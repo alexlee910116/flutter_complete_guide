@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:go_router/go_router.dart';
+
 
 class GesturePage extends StatefulWidget {
   const GesturePage({super.key});
@@ -10,6 +12,9 @@ class GesturePage extends StatefulWidget {
 }
 
 class _GesturePageState extends State<GesturePage> {
+  back(BuildContext context) {
+      context.pop('/');
+    }
   String printString = '';
   double movex = 0, movey = 0;
   @override
@@ -21,7 +26,7 @@ class _GesturePageState extends State<GesturePage> {
           title: Text('How to use gesture'),
           leading: GestureDetector(
             onTap: () {
-              Navigator.pop(context);
+              back(context);
             },
             child: Icon(Icons.arrow_back),
           ),

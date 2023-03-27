@@ -3,13 +3,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:go_router/go_router.dart';
 
 class FlutterLayout extends StatefulWidget {
+  
   @override
   _FlutterLayout createState() => _FlutterLayout();
 }
 
 class _FlutterLayout extends State<FlutterLayout> {
+  back(BuildContext context) {
+      context.pop('/');
+    }
   int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -21,7 +26,7 @@ class _FlutterLayout extends State<FlutterLayout> {
       home: Scaffold(
         appBar: AppBar(
           leading: GestureDetector(onTap:(){
-            Navigator.pop(context);
+            back(context);
           },
           child: Icon(Icons.arrow_back), ),
           title: Text('Layout')),
