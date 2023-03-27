@@ -1,3 +1,45 @@
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
+
+  void pushPage(BuildContext context, String route) {
+    context.push(route);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final buttons = [
+      'statelessWidget',
+      'statefullWidget',
+      'layout',
+      'gesture',
+      'respage',
+      'launch',
+      'photoapp'
+    ].map((title) {
+      return ElevatedButton(
+        onPressed: () => pushPage(context, '/$title'.toLowerCase()),
+        style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
+        child: Text(title),
+      );
+    }).toList();
+
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.blue,
+        title: const Text('Homepage'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: buttons,
+        ),
+      ),
+    );
+  }
+}
 // import 'package:flutter/material.dart';
 // import 'main.dart';
 // import 'package:go_router/go_router.dart';
@@ -84,45 +126,4 @@
 //     }
 //   }    
 
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
-
-  void pushPage(BuildContext context, String route) {
-    context.push(route);
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final buttons = [
-      'statelessWidget',
-      'statefullWidget',
-      'layout',
-      'gesture',
-      'respage',
-      'launch',
-      'photoapp'
-    ].map((title) {
-      return ElevatedButton(
-        onPressed: () => pushPage(context, '/$title'.toLowerCase()),
-        style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
-        child: Text(title),
-      );
-    }).toList();
-
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title: const Text('Homepage'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: buttons,
-        ),
-      ),
-    );
-  }
-}
+  
