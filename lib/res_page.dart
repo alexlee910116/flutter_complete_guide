@@ -24,7 +24,7 @@ class _RespageState extends State<Respage> {
           title: Text('How to resource'),
           leading: GestureDetector(
             onTap: () {
-              Navigator.pop(context);
+              back(context);
             },
             child: Icon(Icons.arrow_back),
           ),
